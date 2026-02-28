@@ -16,7 +16,7 @@ import { useAuth } from "../context/AuthContext";
 import { PasswordInput } from "@/components/PasswordInput";
 import { InputField } from "@/components/InputField";
 import { CustomButton } from "@/components/CustomButton";
-import Colors from "../constants/Colors"; // استيراد الألوان
+import Colors from "../constants/Colors"; 
 
 export default function RegisterScreen() {
     const router = useRouter();
@@ -70,49 +70,49 @@ export default function RegisterScreen() {
         let isValid = true;
 
         if (!fullName.trim()) {
-            newErrors.fullName = "Full name is required / الاسم الكامل مطلوب";
+            newErrors.fullName = "Full name is required";
             isValid = false;
         } else if (fullName.trim().length < 5) {
-            newErrors.fullName = "Name must be at least 5 characters / الاسم يجب أن يكون 5 أحرف على الأقل";
+            newErrors.fullName = "Name must be at least 5 characters";
             isValid = false;
         }
 
         if (!email.trim()) {
-            newErrors.email = "Email is required / البريد الإلكتروني مطلوب";
+            newErrors.email = "Email is required";
             isValid = false;
         } else if (!validateEmail(email)) {
-            newErrors.email = "Invalid email format / صيغة البريد الإلكتروني غير صحيحة";
+            newErrors.email = "Invalid email format";
             isValid = false;
         }
 
         if (isStudent) {
             if (!studentId.trim()) {
-                newErrors.studentId = "Student ID is required / الرقم الجامعي مطلوب";
+                newErrors.studentId = "Student ID is required";
                 isValid = false;
             } else if (!validateStudentId(studentId)) {
-                newErrors.studentId = "Student ID must be at least 7 digits / الرقم الجامعي يجب أن يكون 7 أرقام على الأقل";
+                newErrors.studentId = "Student ID must be at least 7 digits";
                 isValid = false;
             }
         }
 
         if (!password) {
-            newErrors.password = "Password is required / كلمة المرور مطلوبة";
+            newErrors.password = "Password is required";
             isValid = false;
         } else if (!validatePassword(password)) {
-            newErrors.password = "Password must be at least 6 characters / كلمة المرور يجب أن تكون 6 أحرف على الأقل";
+            newErrors.password = "Password must be at least 6 characters";
             isValid = false;
         }
 
         if (!confirmPassword) {
-            newErrors.confirmPassword = "Please confirm your password / الرجاء تأكيد كلمة المرور";
+            newErrors.confirmPassword = "Please confirm your password";
             isValid = false;
         } else if (password !== confirmPassword) {
-            newErrors.confirmPassword = "Passwords do not match / كلمات المرور غير متطابقة";
+            newErrors.confirmPassword = "Passwords do not match";
             isValid = false;
         }
 
         if (!department.trim()) {
-            newErrors.department = "Department is required / القسم مطلوب";
+            newErrors.department = "Department is required";
             isValid = false;
         }
 
@@ -132,7 +132,7 @@ export default function RegisterScreen() {
 
                 await register(email, password, userData);
                 Alert.alert(
-                    "Success / نجاح",
+                    "Success",
                     "Please check your email to verify your account before logging in.",
                     [
                         {
@@ -143,8 +143,8 @@ export default function RegisterScreen() {
                 );
             } catch (error: any) {
                 Alert.alert(
-                    "Error / خطأ",
-                    error.message || "Registration failed / فشل التسجيل"
+                    "Error",
+                    error.message || "Registration failed"
                 );
             }
         }
@@ -183,8 +183,7 @@ export default function RegisterScreen() {
                     <View style={styles.form}>
 
                         <InputField
-                            label="Full Name"
-                            arabicLabel="الاسم الكامل"
+                            label="Full Name" 
                             placeholder="Full Name"
                             value={fullName}
                             onChangeText={setFullName}
@@ -194,7 +193,6 @@ export default function RegisterScreen() {
                         {isStudent && (
                             <InputField
                                 label="Student ID"
-                                arabicLabel="الرقم الجامعي"
                                 placeholder="2324567"
                                 value={studentId}
                                 onChangeText={setStudentId}
@@ -204,7 +202,6 @@ export default function RegisterScreen() {
                         )}
                         <InputField
                             label="Department"
-                            arabicLabel="القسم"
                             placeholder="Computer Science"
                             value={department}
                             onChangeText={setDepartment}
@@ -213,7 +210,6 @@ export default function RegisterScreen() {
 
                         <InputField
                             label="University Email"
-                            arabicLabel="البريد الجامعي"
                             placeholder={isStudent ? "student@university.edu" : "professor@university.edu"}
                             value={email}
                             onChangeText={setEmail}
@@ -223,7 +219,6 @@ export default function RegisterScreen() {
 
                         <PasswordInput
                             label="Password"
-                            arabicLabel="كلمة المرور"
                             value={password}
                             onChangeText={setPassword}
                             error={errors.password}
@@ -231,7 +226,6 @@ export default function RegisterScreen() {
 
                         <PasswordInput
                             label="Confirm Password"
-                            arabicLabel="تأكيد كلمة المرور"
                             value={confirmPassword}
                             onChangeText={setConfirmPassword}
                             error={errors.confirmPassword}
@@ -239,7 +233,6 @@ export default function RegisterScreen() {
 
                         <CustomButton
                             title="Register"
-                            arabicTitle="تسجيل"
                             onPress={handleRegister}
                             loading={loading}
                             style={{ backgroundColor: Colors.primary }}
@@ -341,4 +334,5 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         textDecorationLine: "underline",
     },
+
 });
