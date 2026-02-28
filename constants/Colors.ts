@@ -1,25 +1,26 @@
 export default {
-  // الخلفيات
-  background: '#0d1117',     // خلفية رئيسية
-  surface: '#161b22',        // خلفية البطاقات والهيدرات
-  surface2: '#1f2937',       // خلفية المدخلات والعناصر الثانوية
 
-  // الحدود
+  background: '#0d1117',   
+  surface: '#161b22',       
+  surface2: '#1f2937',      
+
+
   border: '#30363d',
 
-  // الألوان الأساسية
-  primary: '#00d084',        // العلامة التجارية (أخضر)
-  secondary: '#00b8d9',      // لون ثانوي (سماوي)
-  primaryDark: '#00b87a',    // درجة أغمق للزر (تستخدم في التدرجات)
+ 
+  primary: '#00d084',       
+  secondary: '#00b8d9',      
+  primaryDark: '#00b87a',    
+  
+  
+  text: '#e6edf3',         
+  textMuted: '#8b949e',     
 
-  // النصوص
-  text: '#e6edf3',           // نص رئيسي
-  textMuted: '#8b949e',      // نص ثانوي
-
-  // الألوان الوظيفية
+ 
   danger: '#ff6b6b',
   warning: '#f59e0b',
 
-  // طبقات شفافة
+  
   overlay: 'rgba(0,0,0,0.5)',
+
 };
