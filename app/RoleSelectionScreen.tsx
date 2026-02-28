@@ -43,7 +43,6 @@ export default function RoleSelectionScreen() {
               </View>
               <View style={styles.textContainer}>
                 <Text style={styles.roleTitle}>Professor</Text>
-                <Text style={styles.roleSubtitle}>استاذ</Text>
                 <Text style={styles.roleDescription}>
                   Manage classes, create sessions, and track attendance.
                 </Text>
@@ -64,7 +63,6 @@ export default function RoleSelectionScreen() {
               </View>
               <View style={styles.textContainer}>
                 <Text style={styles.roleTitle}>Student</Text>
-                <Text style={styles.roleSubtitle}>طالب</Text>
                 <Text style={styles.roleDescription}>
                   Check in to classes, view history, and stats.
                 </Text>
@@ -215,4 +213,5 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     fontWeight: '500',
   },
+
 });
