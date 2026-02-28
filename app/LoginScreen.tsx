@@ -69,7 +69,6 @@ export default function LoginScreen() {
                     <View style={styles.form}>
                         <InputField
                             label="University Email"
-                            arabicLabel="البريد الجامعي"
                             placeholder="student@university.edu"
                             value={email}
                             onChangeText={setEmail}
@@ -78,28 +77,25 @@ export default function LoginScreen() {
 
                         <PasswordInput
                             label="Password"
-                            arabicLabel="كلمة المرور"
                             value={password}
                             onChangeText={setPassword}
                         />
 
                         <CustomButton
                             title="Login"
-                            arabicTitle="تسجيل الدخول"
                             onPress={handleLogin}
                             loading={loading}
                             style={{ backgroundColor: Colors.primary }}
                         />
 
                         <TouchableOpacity
-                            style={styles.forgotButton}
-                            onPress={() => {console.log("Forgot Password Pressed")}}
-                        >
+                               style={styles.forgotButton}
+                              onPress={() => {console.log("Forgot Password Pressed")}}
+                          >
                             <Text style={styles.forgotText}>
-                                Forgot Password? /{" "}
-                                <Text style={styles.arabicForgot}>نسيت كلمة المرور؟</Text>
-                            </Text>
-                        </TouchableOpacity>
+                                   Forgot Password?
+                              </Text>
+                         </TouchableOpacity>
 
                         <View style={styles.orContainer}>
                             <View style={styles.line} />
@@ -213,4 +209,5 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         textDecorationLine: "underline",
     },
+
 });
